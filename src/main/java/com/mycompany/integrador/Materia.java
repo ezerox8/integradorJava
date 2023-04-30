@@ -9,7 +9,7 @@ package com.mycompany.integrador;
 import java.util.List;
 
 public class Materia extends Nombres {
-    private List<Materia> correlativas; // lista de materias correlativas para poder cursar la materia actual
+    private final List<Materia> correlativas; // lista de materias correlativas para poder cursar la materia actual
 
     /**
      * Constructor de la clase Materia.
@@ -47,5 +47,16 @@ public class Materia extends Nombres {
     @Override
     public String getNombre() {
         return nombre;
+    }
+    
+    public String[] getNombresCorrelativas() {
+        int size = correlativas.size();
+        String[] listaCorrelativas = new String[size];
+        int count = 0;
+        for (Materia correlativa : correlativas) {
+            listaCorrelativas[count] = correlativa.getNombre();
+            count++;
+        }
+        return listaCorrelativas;
     }
 }
