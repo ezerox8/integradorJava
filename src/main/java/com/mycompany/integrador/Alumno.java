@@ -13,8 +13,8 @@ import java.util.List;
  * @author ezequiel.suarez
  */
 public class Alumno extends Nombres {
-    private String legajo; // numero de legajo del alumno
-    private List<Materia> materiasAprobadas; // lista de materias aprobadas por el alumno poder cursar marerias correlativas.
+    private final String legajo; // numero de legajo del alumno
+    private final List<Materia> materiasAprobadas; // lista de materias aprobadas por el alumno poder cursar marerias correlativas.
     /**
     * Constructor de la clase Alumno.
     * @param nombre El nombre del alumno.
@@ -40,5 +40,9 @@ public class Alumno extends Nombres {
     @Override
     public String getNombre() {
         return nombre;
+    }
+    
+    public String getLegajo() {
+        return legajo;
     }
 }
